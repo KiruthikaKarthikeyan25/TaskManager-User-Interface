@@ -1,0 +1,84 @@
+<div class="container">
+
+<div class="row">
+  <div class="col-md-1">
+      <label for="lblTask" class="control-label">Task:</label>
+  </div>
+    
+    <div class="col-md-5">
+        <input type="text" class="form-control input-sm txtColor" id="txtViewTask" [(ngModel)]="item.TaskName" (keyup) = 'SearchByTask(item.TaskName)' >
+    </div>
+
+    <div class="col-md-1">
+        <label for="lblTask" class="control-label">Parent Task:</label>
+    </div>
+      
+      <div class="col-md-5">
+          <input type="text" class="form-control input-sm txtColor" id="txtViewParentTask" [(ngModel)]="item.ParentTaskName" (keyup) = 'SearchByParentTask(item.ParentTaskName)' >
+      </div>
+
+</div>
+<div class="row">
+ 
+    <div class="col-md-1">
+        <label for="lblViewPriorityFrom" class="control-label">Priority From:</label>
+    </div>
+      
+      <div class="col-md-2">
+          <input type="text" class="form-control input-sm txtColor" id="txtViewPriorityFrom" [(ngModel)]="item.Priority" (keyup) = 'SearchByPriorityFrom(item.Priority)' >
+      </div>
+
+      <div class="col-md-1">
+          <label for="lblViewPriorityTo" class="control-label">Priority To:</label>
+      </div>
+        
+        <div class="col-md-2">
+            <input type="text" class="form-control input-sm txtColor" id="txtViewPriorityTo" [(ngModel)]="item.PriorityTo" (keyup) = 'SearchByPriorityTo(item.PriorityTo)' >
+        </div>
+
+        <div class="col-md-1">
+            <label for="lblViewStartDate" class="control-label">Start Date:</label>
+        </div>
+          
+          <div class="col-md-2">
+              <input type="date" class="form-control input-sm txtColor1" id="txtViewStartDate" [(ngModel)]="item.SDate" (ngModelChange) = 'SearchBySDate($event)'>
+          </div>
+
+          <div class="col-md-1">
+              <label for="lblViewEndDate" class="control-label">End Date:</label>
+          </div>
+            
+            <div class="col-md-2">
+                <input type="date" class="form-control input-sm txtColor1" id="txtViewEndDate" [(ngModel)]="item.EDate" (ngModelChange) = 'SearchByEDate($event)' >
+            </div>
+</div>
+
+<hr/>
+
+<table class="table">
+    <thead>
+        <th>Task</th>
+        <th>Parent</th>
+        <th>Priority</th>
+        <th>Start</th>
+        <th>End</th>        
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of list1">
+        <td>{{item.TaskName}}</td>
+        <td>{{item.ParentTaskName}}</td>
+        <td>{{item.Priority}}</td>
+        <td>{{item.SDate |date:'yyyy-MM-dd'}}</td>
+        <td>{{item.EDate |date:'yyyy-MM-dd'}}</td>  
+              <td><button type="button"  (click)="Edit(item.TaskId)" [disabled]="item.IsTaskEnded">Edit</button>             
+              <td><button type="button"  (click)="EndTask(item.TaskId)" [disabled]="item.IsTaskEnded">End Task</button>
+              <td><button type="button"  (click)="Delete(item.TaskId)" [disabled]="item.IsTaskEnded == false">Delete</button>
+            </tr>             
+      </tbody>
+</table>
+</div>
+<!-- {{list|json}} -->
+ <!-- {{list1|json}} [ngClass]=[btnStyle] 
+    [ngClass] ="{'btn-chg':item.IsTaskEnded === True}"
+[ngClass] ="{'btn-chg':item.IsTaskEnded === True}"
+[ngClass] ="{'btn-def':item.IsTaskEnded === True}"  -->

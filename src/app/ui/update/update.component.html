@@ -1,0 +1,102 @@
+<div class="container">
+  <div>
+    <div class="row">
+        <div class="col-md-12">
+          <h3>Update Task</h3>
+          </div>
+    </div>
+    <div class="row lblsuccess" >
+        <div class="col-md-12">
+          <h4>{{Recordadded}}</h4>
+          </div>
+    </div>
+  </div>
+    <div class="row">
+        <div class="col-md-3">
+            <label  class="control-label">Task:</label>
+        </div>
+        <div class="col-md-1">
+            
+       </div>
+          <div class="col-md-7">
+              <input type="text" required [(ngModel)]="item.TaskName" class="form-control input-sm txtColor" value="item.TaskName">
+          </div>
+          <div class="col-md-1">
+              
+         </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <label  class="control-label">Priority:</label>
+        </div>          
+        <div class="col-md-1">
+             <span>0</span> 
+        </div>
+          <div class="col-md-7">            
+             <input type="range" [(ngModel)]="item.Priority" class="form-control input-sm txtColor" min="0" max="30" step="1" value="0">            
+          </div>
+          <div class="col-md-1">
+              <span>30</span> 
+         </div>          
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <label  class="control-label">Parent Task:</label>
+        </div>          
+        <div class="col-md-1"></div>            
+        
+          <div class="col-md-7">            
+              <!-- <input type="text" [(ngModel)]="item.ParentTaskName" class="form-control input-sm txtColor"> -->
+              <!-- <select name="ParentTask" class="form-control input-sm txtColor">
+                  <option value="Parent Task 1">Parent Task 1</option>
+                  <option value="Parent Task 2">Parent Task 2</option>
+                  <option value="Parent Task 3">Parent Task 3</option>
+                  <option value="Parent Task 4">Parent Task 4</option>
+                </select> -->
+                <!-- <select [(ngModel)]="item.ParentTaskName" class="Parentname"  id="Parentname">
+                    <option class="form-control input-sm txtColor"[value]="item.TaskName" 
+                        *ngFor="let item of list">{{item.TaskName}}
+                    </option>
+               </select> -->
+               <input type="text" [(ngModel)]="item.ParentTaskName" class="form-control input-sm txtColor">
+          </div>
+          <div class="col-md-1"></div>            
+                   
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <label  class="control-label">Start Date:</label>
+        </div>          
+        <div class="col-md-1"></div>            
+        
+          <div class="col-md-7">            
+              <input type="text"  [(ngModel)]="item.SDate" class="form-control input-sm txtColor">
+          </div>
+          <div class="col-md-1"></div>            
+                   
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <label  class="control-label">End Date:</label>
+        </div>          
+        <div class="col-md-1"></div>            
+        
+          <div class="col-md-7">            
+              <input type="text" [(ngModel)]="item.EDate" class="form-control input-sm txtColor">
+          </div>
+          <div class="col-md-1"></div>            
+                   
+    </div>
+    <div class="row">
+        <div class="col-md-3"></div>                     
+        
+        <div class="col-md-1"></div>            
+        
+          <div class="col-md-7">            
+              <button type="button" (click)="Update()">Update</button> &nbsp;&nbsp;
+              <button type="button" (click)="Cancel()">Cancel</button>
+          </div>
+          <div class="col-md-1"></div>            
+                   
+    </div>
+</div>
