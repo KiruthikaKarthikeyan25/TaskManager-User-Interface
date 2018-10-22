@@ -125,12 +125,19 @@ btnStyle:string = 'btn-def';
     }
     SearchBySDate(ssdate:Date)
     {
-      //this.list1 = this.list.filter(i =>i.StartDate.toString().includes(this.Sdate.toString()));
-      if(ssdate !== undefined)
+      this.Sdate = ssdate;
+      // var from_date = ssdate!== undefined? new Date(ssdate):"0001/01/01";
+      // var to_date = this.Edate !== undefined ? new Date(this.Edate) : "9999/30/12";
+     //this.list1 = this.list.filter(i =>i.StartDate.toString().includes(this.Sdate.toString()));
+      if(ssdate !== undefined && ssdate !== null)
       this.list1 = this.list.filter(i =>i.SDate.toString().toUpperCase().startsWith(ssdate.toString().toUpperCase())) ;
+      // if(ssdate !== undefined && this.Edate !== undefined  ){
+      //   this.list.filter(i =>i.SDate >=
+      // }
     }
     SearchByEDate(eedate:Date)
     {
+      this.Edate = eedate;
       //this.list1 = this.list.filter(i =>i.EndDate.toString().includes(this.Edate.toString()));
       if(eedate !== undefined && eedate !== null)
       this.list1 = this.list.filter(i =>i.EDate.toString().toUpperCase().startsWith(eedate.toString().toUpperCase())) ;

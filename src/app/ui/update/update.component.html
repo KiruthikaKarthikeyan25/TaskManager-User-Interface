@@ -45,20 +45,14 @@
         </div>          
         <div class="col-md-1"></div>            
         
-          <div class="col-md-7">            
-              <!-- <input type="text" [(ngModel)]="item.ParentTaskName" class="form-control input-sm txtColor"> -->
-              <!-- <select name="ParentTask" class="form-control input-sm txtColor">
-                  <option value="Parent Task 1">Parent Task 1</option>
-                  <option value="Parent Task 2">Parent Task 2</option>
-                  <option value="Parent Task 3">Parent Task 3</option>
-                  <option value="Parent Task 4">Parent Task 4</option>
-                </select> -->
-                <!-- <select [(ngModel)]="item.ParentTaskName" class="Parentname"  id="Parentname">
-                    <option class="form-control input-sm txtColor"[value]="item.TaskName" 
-                        *ngFor="let item of list">{{item.TaskName}}
+          <div class="col-md-7">                          
+                <select [(ngModel)]= "item.ParentTaskName" class="Parentname">
+                    <option 
+                        *ngFor="let item of list" [ngValue]= "item.ParentTaskName" class='form-control input-sm txtColor'>
+                        {{item.ParentTaskName}}
                     </option>
-               </select> -->
-               <input type="text" [(ngModel)]="item.ParentTaskName" class="form-control input-sm txtColor">
+               </select>
+               <!-- <input type="text" [(ngModel)]="item.ParentTaskName" class="form-control input-sm txtColor"> -->
           </div>
           <div class="col-md-1"></div>            
                    
@@ -70,7 +64,7 @@
         <div class="col-md-1"></div>            
         
           <div class="col-md-7">            
-              <input type="text"  [(ngModel)]="item.SDate" class="form-control input-sm txtColor">
+              <input type="date-local"  [(ngModel)]="item.SDate" class="form-control input-sm txtColor">
           </div>
           <div class="col-md-1"></div>            
                    
@@ -82,7 +76,7 @@
         <div class="col-md-1"></div>            
         
           <div class="col-md-7">            
-              <input type="text" [(ngModel)]="item.EDate" class="form-control input-sm txtColor">
+              <input type="date-local" [(ngModel)]="item.EDate" class="form-control input-sm txtColor">
           </div>
           <div class="col-md-1"></div>            
                    
