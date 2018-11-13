@@ -29,4 +29,10 @@ describe('ViewComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('Edit button click navigate to update task page', () => {
+    component.Edit(10);
+  });
+  it('EndTask button click refresh the view task page', () => {
+    component.EndTask(10);
+  });  
 });
